@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList> 
+
+  <path>wheel-chair.ac</path>
+
+  <animation>
+    <!-- Objets statiques -->
+    <object-name>structure</object-name>
+    <object-name>structure2</object-name>
+    <object-name>structure3</object-name>
+    <object-name>siege</object-name>
+    <object-name>dossier</object-name>
+    <object-name>poignees</object-name>
+    <object-name>acoudoirs</object-name>
+    <object-name>servo</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>moteur</object-name>
+    <object-name>cotes</object-name>
+    <object-name>support1</object-name>
+    <object-name>support2</object-name>
+    <object-name>support3</object-name>
+    <object-name>bague</object-name>
+    <object-name>posepiedG</object-name>
+    <object-name>posepiedD</object-name>
+
+    <!-- Objets animés -->
+    <object-name>axeG</object-name>
+    <object-name>roueAG</object-name>
+    <object-name>introueAG</object-name>
+    <object-name>pateG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>introueAD</object-name>
+    <object-name>pateD</object-name>
+    <object-name>axe</object-name>
+    <object-name>roueG</object-name>
+    <object-name>introueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>introueD</object-name>
+    <object-name>joystick</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>structure</object-name>
+    <object-name>structure2</object-name>
+    <object-name>structure3</object-name>
+    <object-name>reservoirs</object-name>
+    <object-name>moteur</object-name>
+    <object-name>cotes</object-name>
+    <object-name>support1</object-name>
+    <object-name>support2</object-name>
+    <object-name>support3</object-name>
+  </effect>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Wheel-Chair/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotation des roues avant en fonction de la gouverne de direction -->
+  <animation>
+    <name>EnsembleGauche</name>
+    <object-name>axeG</object-name>
+    <object-name>roueAG</object-name>
+    <object-name>introueAG</object-name>
+    <object-name>pateG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleGauche</object-name>
+    <property>surface-positions/aileron-pos-norm</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m> -0.239 </x-m>
+      <y-m> -0.420 </y-m>
+      <z-m>  0.255 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>EnsembleDroite</name>
+    <object-name>axeD</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>introueAD</object-name>
+    <object-name>pateD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleDroite</object-name>
+    <property>surface-positions/aileron-pos-norm</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m> -0.239 </x-m>
+      <y-m>  0.420 </y-m>
+      <z-m>  0.255 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <!-- Rotations des roues -->
+  <animation>
+    <name>RoueAvantGauche</name>
+    <object-name>axeG</object-name>
+    <object-name>roueAG</object-name>
+    <object-name>introueAG</object-name>
+  </animation>
+
+  <animation>
+   <type>spin</type>
+   <object-name>RoueAvantGauche</object-name>
+   <property>gear/gear[0]/rollspeed-ms</property>
+   <factor> -3 </factor>
+   <center>
+     <x-m> -0.165 </x-m>
+     <y-m> -0.420 </y-m>
+     <z-m>  0.118 </z-m>
+   </center>
+   <axis>
+     <x> 0 </x>
+     <y> 1 </y>
+     <z> 0 </z>
+   </axis>
+  </animation>
+
+  <animation>
+    <name>RoueAvantDroite</name>
+    <object-name>axeD</object-name>
+    <object-name>roueAD</object-name>
+    <object-name>introueAD</object-name>
+  </animation>
+
+  <animation>
+   <type>spin</type>
+   <object-name>RoueAvantDroite</object-name>
+   <property>gear/gear[0]/rollspeed-ms</property>
+   <factor> -15 </factor>
+   <center>
+     <x-m> -0.165 </x-m>
+     <y-m>  0.420 </y-m>
+     <z-m>  0.118 </z-m>
+   </center>
+   <axis>
+     <x> 0 </x>
+     <y> 1 </y>
+     <z> 0 </z>
+   </axis>
+  </animation>
+
+  <animation>
+    <name>RoueGauche</name>
+    <object-name>roueG</object-name>
+    <object-name>introueG</object-name>
+  </animation>
+
+  <animation>
+   <type>spin</type>
+   <object-name>RoueGauche</object-name>
+   <property>gear/gear[0]/rollspeed-ms</property>
+   <factor> -15 </factor>
+   <center>
+     <x-m>  0.455 </x-m>
+     <y-m> -0.563 </y-m>
+     <z-m>  0.304 </z-m>
+   </center>
+   <axis>
+     <x> 0 </x>
+     <y> 1 </y>
+     <z> 0 </z>
+   </axis>
+  </animation>
+
+  <animation>
+    <name>RoueDroite</name>
+    <object-name>roueD</object-name>
+    <object-name>introueD</object-name>
+  </animation>
+
+  <animation>
+   <type>spin</type>
+   <object-name>RoueDroite</object-name>
+   <property>gear/gear[0]/rollspeed-ms</property>
+   <factor> -15 </factor>
+   <center>
+     <x-m>  0.455 </x-m>
+     <y-m>  0.563 </y-m>
+     <z-m>  0.304 </z-m>
+   </center>
+   <axis>
+     <x> 0 </x>
+     <y> 1 </y>
+     <z> 0 </z>
+   </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>joystick</object-name>
+    <property>surface-positions/aileron-pos-norm</property>
+    <factor> 10.0 </factor>
+    <center>
+      <x-m> -0.367 </x-m>
+      <y-m>  0.411 </y-m>
+      <z-m>  0.941 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>joystick</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 10 </factor>
+    <center>
+      <x-m> -0.367 </x-m>
+      <y-m>  0.411 </y-m>
+      <z-m>  0.941 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

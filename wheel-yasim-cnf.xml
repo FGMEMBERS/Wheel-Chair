@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="wheel-base.xml">
+
+  <sim>
+
+    <description>Wheel Chair (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>wheel-yasim</aero>
+
+  </sim>
+
+</PropertyList>
+

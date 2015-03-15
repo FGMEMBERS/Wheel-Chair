@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<PropertyList>
+
+  <fx>
+
+    <engine>
+     <name>engine</name>
+     <mode>looped</mode>
+     <path>Aircraft/Wheel-Chair/Sounds/Wheel-Chair1.wav</path>
+     <property>/engines/engine[0]/running</property>
+      <pitch>
+        <property>engines/engine[0]/n1</property>
+        <ofset>0.1</ofset>
+        <factor>.001</factor>
+      </pitch>
+      <volume>
+        <property>engines/engine[0]/thrust-lbs</property>
+        <factor>0.000025</factor>
+        <min>0.2</min>
+        <max>0.75</max>
+      </volume>
+    </engine>
+
+  </fx>
+ 
+</PropertyList>

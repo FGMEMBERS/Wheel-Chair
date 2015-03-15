@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="wheel-jsbsim-cnf.xml"> -->
+<PropertyList include="wheel-yasim-cnf.xml">
+
+  <sim>
+    <description>Wheel Chair</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

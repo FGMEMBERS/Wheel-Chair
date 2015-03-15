@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Whell Chair for FlightGear.
+
+     2007 BARANGER Emmanuel
+     2011    //      //
+     This file is licensed under the GPL license.
+-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Wheel Chair for Aerotro</description>
+    <author>Emmanuel BARANGER (3D)</author>
+    <status>experimental</status>
+    <aircraft-version>0.1</aircraft-version>
+
+    <startup>
+      <splash-texture>Aircraft/Wheel-Chair/wheel-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path>Aircraft/Wheel-Chair/Models/wheel-chair.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <sound>
+      <path>Aircraft/Wheel-Chair/Sounds/wheel-sound.xml</path>
+    </sound>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0"> 0 </int>
+        <int type="int" n="1"> 0 </int>
+        <int type="int" n="2"> 0 </int>
+        <int type="int" n="3"> 0 </int>
+        <int type="int" n="4"> 0 </int>
+        <int type="int" n="5"> 0 </int>
+        <float n="0" alias="/instrumentation/doors/Lcrew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/Lpassenger/position-norm"/>
+        <float n="2" alias="/instrumentation/doors/Rcrew/position-norm"/>
+        <float n="3" alias="/instrumentation/doors/Rpassenger/position-norm"/>
+        <float n="4" alias="/instrumentation/doors/roof/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <menubar include="Dialogs/wheel-menu.xml"/>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/wheel-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/Wheel-Chair/Nasal/doors.nas</file>
+    </doors>
+    <wheel>
+      <file>Aircraft/Wheel-Chair/Nasal/liveries.nas</file>
+      <file>Aircraft/Wheel-Chair/Nasal/light.nas</file>
+    </wheel>
+  </nasal>
+
+</PropertyList>
+

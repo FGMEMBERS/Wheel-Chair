@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FDM for "Wheel Chair" based on Jeep FDM By Detlef FABER*
+
+     source : http://en.wikipedia.org/wiki/Citro%C3%ABn_2CV
+
+     length : 3.83 metres (150.8 in)
+     width  : 1.48 metres ( 58.3 in)
+     height : 1.60 metres ( 63.0 in)
+     weight :  560 kg     ( 1200 lb)
+ -->
+
+<airplane mass="1200">
+
+  <approach speed="10" aoa="6" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
+  </approach>
+
+  <cruise speed="25" alt="0" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+  </cruise>
+
+  <cockpit x="0.045" y="0.173" z="0.489"/>
+
+  <fuselage ax="0.634"  ay="0" az="0.731" bx="-0.717" by="0" bz="0.731" width="1" taper="1" cx="2.5" cz="2.5"/>
+
+  <wing x="0" y="0" z="0.240"
+        chord="1"
+        length="0.5"
+        taper="1"
+        camber="0">
+  </wing>
+
+  <mstab x="0" y="0" z="0.240"
+         chord="1.2"
+         length="0.5">
+  </mstab>
+
+  <jet x="0" y="0" z="0.100"
+       n1-idle="30" 
+       n1-max="90" 
+       n2-idle="35" 
+       n2-max="95"
+       egt="850" 
+       tsfc="1.39"
+       mass="30" 
+       thrust="250">
+       <actionpt x="0" y="0" z="0.100"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  </jet>
+  
+  <gear x="0.165" y="0.428" z="0.006"
+        compression="0.01" 
+        spring="0.8"
+        on-solid="1"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/flight/aileron" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.6" dst1="0.6"/>
+        <control-input axis="/controls/flight/ridder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.6" dst1="0.6"/>
+
+        <control-output control="STEER" prop="/surface-positions/aileron-pos-norm"/>
+  </gear>
+
+  <gear x="0.165" y="-0.428" z="0.006"
+        compression="0.01" 
+        spring="0.8"
+        on-solid="1"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/flight/aileron" control="STEER" square="true" src0="-0.8" src1="0.8" dst0="-0.6" dst1="0.6"/>
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-0.8" src1="0.8" dst0="-0.6" dst1="0.6"/>
+
+        <control-output control="STEER" prop="/surface-positions/aileron-pos-norm"/>
+  </gear>
+
+  <gear x="-0.455" y="0.580" z="0.017"
+        compression="0.01" 
+        spring="0.8"
+        on-solid="1"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+
+  <gear x="-0.455" y="-0.580" z="0.017"
+        compression="0.01" 
+        spring="0.8"
+        on-solid="1"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+
+  <tank x="-0.269" y="0" z="0.417" capacity="61.73"/>
+
+  <ballast x="0" y="0" z="-1" mass="500"/>
+
+</airplane>
+
